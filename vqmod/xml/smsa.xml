@@ -1,0 +1,16 @@
+<modification>  
+    <id>Smsa</id>
+    <version>OC 2</version>
+    <vqmver>2.5.0</vqmver>
+    <author>Ahyad</author>
+		
+    <file name="admin/view/template/sale/order_info.tpl">
+        <operation>
+            <search position="before"><![CDATA[<ul class="breadcrumb">]]></search>
+            <add><![CDATA[
+            <div class="pull-right" style="margin: 0px 5px;"><a href="<?php $uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2); echo (($_SERVER['HTTPS']) ? "https" : "http").'://'.$_SERVER["HTTP_HOST"].$uri_parts[0].'?route=sale/smsa/create&token='.$_GET['token'].'&order_id='.$_GET['order_id']; ?>" target="_blank" class="btn btn-warning">SMSA Shipment</a></div>
+            ]]></add>
+        </operation>
+    </file>
+          
+</modification>
